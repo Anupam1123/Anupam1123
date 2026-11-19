@@ -20,26 +20,46 @@
     .muted { fill:#aab8d2; } .white { fill:#f4f7ff; }
     .blue { fill:#67a4ff; } .red { fill:#ff6577; }
     .panel { fill:#0d1528; stroke:#263b61; stroke-width:1.4; }
+  
+/* Each character in the name enters sequentially, then remains visible. */
+.name-line .letter { opacity: 1; animation: nameReveal .55s ease-out both; }
+.name-line .l0 { animation-delay: 0.00s; }
+.name-line .l1 { animation-delay: 0.12s; }
+.name-line .l2 { animation-delay: 0.24s; }
+.name-line .l3 { animation-delay: 0.36s; }
+.name-line .l4 { animation-delay: 0.48s; }
+.name-line .l5 { animation-delay: 0.60s; }
+.name-line .l6 { animation-delay: 0.72s; }
+.name-line .l7 { animation-delay: 0.84s; }
+.name-line .l8 { animation-delay: 0.96s; }
+.name-line .l9 { animation-delay: 1.08s; }
+.name-line .l10 { animation-delay: 1.20s; }
+.name-line .l11 { animation-delay: 1.32s; }
+@keyframes nameReveal {
+  from { opacity: 0; transform: translateY(14px); filter: blur(3px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
   </style>
 </defs>
 
       <style>
-.letter { opacity:0; animation: letterIn .35s ease-out forwards; }
-.l0{animation-delay:0.00s}.l1{animation-delay:0.11s}.l2{animation-delay:0.22s}.l3{animation-delay:0.33s}.l4{animation-delay:0.44s}.l5{animation-delay:0.55s}.l6{animation-delay:0.66s}.l7{animation-delay:0.77s}.l8{animation-delay:0.88s}.l9{animation-delay:0.99s}.l10{animation-delay:1.10s}.l11{animation-delay:1.21s}
-@keyframes letterIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+ to { opacity:1; transform:translateY(0); } }
 .roles text { opacity:0; animation: roleSwap 8s infinite; }
+.roles text:first-child { opacity:1; animation-name: roleSwapFirst; }
 .roles text:nth-child(1){animation-delay:0s}
 .roles text:nth-child(2){animation-delay:2s}
 .roles text:nth-child(3){animation-delay:4s}
 .roles text:nth-child(4){animation-delay:6s}
 @keyframes roleSwap { 0%,4%{opacity:0; transform:translateY(8px)} 8%,21%{opacity:1;transform:translateY(0)} 25%,100%{opacity:0;transform:translateY(-8px)} }
+@keyframes roleSwapFirst { 0%,4%{opacity:1;transform:translateY(0)} 8%,21%{opacity:1;transform:translateY(0)} 25%,100%{opacity:0;transform:translateY(-8px)} }
 </style>
       <rect width="860" height="350" rx="24" fill="url(#bg)"/>
       <rect width="860" height="350" rx="24" fill="url(#dots)"/>
       <rect x="1" y="1" width="858" height="348" rx="23" fill="none" stroke="url(#edge)" stroke-width="2" opacity=".9"/>
       
 <text x="42" y="48" class="blue" font-size="13" letter-spacing="3">BACKEND ENGINEERING • AI AUTOMATION</text>
-<text x="42" y="112" class="white" font-size="43" font-weight="700"><tspan class="letter l0">A</tspan><tspan class="letter l1">N</tspan><tspan class="letter l2">U</tspan><tspan class="letter l3">P</tspan><tspan class="letter l4">A</tspan><tspan class="letter l5">M</tspan><tspan class="letter l6">&#160;</tspan><tspan class="letter l7">S</tspan><tspan class="letter l8">I</tspan><tspan class="letter l9">N</tspan><tspan class="letter l10">H</tspan><tspan class="letter l11">A</tspan></text>
+<text x="42" y="112" class="white name-line" font-size="43" font-weight="700"><tspan class="letter l0">A</tspan><tspan class="letter l1">N</tspan><tspan class="letter l2">U</tspan><tspan class="letter l3">P</tspan><tspan class="letter l4">A</tspan><tspan class="letter l5">M</tspan><tspan class="letter l6">&#160;</tspan><tspan class="letter l7">S</tspan><tspan class="letter l8">I</tspan><tspan class="letter l9">N</tspan><tspan class="letter l10">H</tspan><tspan class="letter l11">A</tspan></text>
 <text x="44" y="151" class="muted" font-size="12">Building scalable backend systems and intelligent AI-powered business solutions.</text>
 <g transform="translate(44 188)">
   <rect width="450" height="52" rx="12" fill="#101f3b" stroke="#247bff" stroke-opacity=".65"/>
